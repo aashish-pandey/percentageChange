@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Calculate percentage difference</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+
+         <style>
+            
+            body{
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                background-color: rgb(129, 129, 244);
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            input{
+                font-size: large;
+                padding: 1rem;
+
+            }
+
+            button{
+                width: 10rem;
+                padding: 1rem;
+                font-size: medium;
+                color: white;
+                background-color: orange;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+            button:hover{
+                background-color: rgba(255, 166, 0, 0.736);
+            }
+
+            span{
+                font-size: large;
+                padding: 2rem;
+                margin: 1rem;
+                color: black;
+                font-weight: 600;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+            Enter Previous value: 
+        <input type="text" id="prevMonth"><br>
+        Enter Current value:
+        <input type="text" id="thisMonth"><br>
+        <button onclick="getAns()">get percentage change</button>
+        <span id="ans"></span>
+        
+        <script>
+            
+            function getAns(){
+                var prev = document.getElementById('prevMonth').value;
+                var present = document.getElementById('thisMonth').value;
+                
+                var a = (present - prev) * 100 / prev
+
+                document.getElementById('ans').innerText = a + " %"
+            }
+
+        </script>
+
+        <script src="" async defer></script>
+    </body>
+</html>
